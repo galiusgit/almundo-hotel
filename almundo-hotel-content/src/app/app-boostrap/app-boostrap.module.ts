@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core/core';
-import { CommonModule } from '@angular/common/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown/index';
 import { TooltipModule } from 'ngx-bootstrap/tooltip/index';

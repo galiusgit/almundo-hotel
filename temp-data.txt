@@ -1,0 +1,7 @@
+---------------------------
+
+https://github.com/loiane/angular-bootstrap-example
+
+---------------------------
+
+versión que tenía en la oficina nodeja: node -v - v6.10.3

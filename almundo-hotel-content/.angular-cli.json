@@ -55,6 +55,10 @@
       "inlineStyle": true,
       "inlineTemplate": true
     },
+    "serve": {
+      "port": 4444,
+      "host": "localhost"
+    },
     "directive": {
       "spec": false
     },
