@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Almundo hotel content (front)",
   "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/galiusgit/almundo-hotel.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

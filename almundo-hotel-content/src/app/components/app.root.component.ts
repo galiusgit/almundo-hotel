@@ -3,7 +3,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal/index';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.root.component.html',
   styles: [
     `.logo {
       max-height: 30px;
@@ -11,9 +11,9 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal/index';
     }`
   ]
 })
-export class AppComponent {
+export class AppRootComponent {
   public modalRef: BsModalRef;
-  constructor(private modalService: BsModalService) {}
+  constructor(private modalService: BsModalService) { }
 
   public openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
