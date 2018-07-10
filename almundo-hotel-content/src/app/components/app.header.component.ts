@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header-section',
-  template: `<h2>{{title}}</h2>`
+  template: `
+  <div class="col-xs-12 col-sm-12 col-lg-12" style="border: 1px solid red;"><h2>{{title}}</h2></div>
+  `
 })
 export class AppHeaderSectionComponent {
-  title: string = "Header";
+  title: string = "App Header Section Component";
 }

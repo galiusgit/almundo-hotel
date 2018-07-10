@@ -8,12 +8,14 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   <app-header-section></app-header-section>
   <app-left-section></app-left-section>
   <app-right-section></app-right-section>
+  <div class="clearfix"></div>
   `,
   styles: [
     `.logo {
       max-height: 30px;
       padding-bottom: 5px;
-    }`
+    }
+    `
   ]
 })
 export class AppRootSectionComponent {
