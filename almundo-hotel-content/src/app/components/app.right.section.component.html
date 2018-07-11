@@ -1,0 +1,27 @@
+<div>
+  <br/>
+  <span *ngFor="let hotel of hotels" class="hotel-summary-view">
+    <div class="white-box-panel">
+      <div class="image-section col-xs-12 col-sm-4 col-lg-4 no-padding-margin">
+        <img src="assets/images/hotels/{{hotel.image}}" class="img-responsive" alt="Image {{hotel.name}}" />
+      </div>
+      <div class="summry-items col-xs-12 col-sm-5 col-lg-5 no-padding-margin">
+        <h4>{{hotel.name}}</h4>
+        <div class="start-rate-component">
+          <stars-view [number-stars]="hotel.stars"></stars-view>
+        </div>
+        <div class="icon-amenities"></div>
+        <div class="summry-items-description"></div>
+      </div>
+      <div class="summry-price col-xs-12 col-sm-3 col-lg-3 no-padding-margin">
+        <label>Precio por habitación</label>
+        <div class="price-filter">ARS 863</div>
+        <a href="#">
+          <button id="singlebutton" name="singlebutton" class="btn btn-primary">Ver Hotel</button>
+        </a>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <br/>
+  </span>
+</div>

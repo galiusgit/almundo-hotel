@@ -1,0 +1,66 @@
+<div>
+  <br/>
+  <div class="filter-component">
+    <!-- filter title -->
+    <div class="white-box-panel margin-bottom-5x">
+      <h4>
+        <strong>Filtros</strong>
+      </h4>
+    </div>
+    <!-- form section -->
+    <div class="white-box-panel margin-bottom-5x">
+      <h5 class="common-title">
+        <span class="icon-search"></span>
+        <strong>Nombre del hotel</strong>
+      </h5>
+      <form>
+        <div class="input-group">
+          <!-- Search input-->
+          <input id="searchinput" name="searchinput" type="search" placeholder="Ingrese el nombre del hotel" class="form-control input-md">
+          <!-- Button -->
+          <span class="input-group-btn">
+            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Aceptar</button>
+          </span>
+        </div>
+      </form>
+    </div>
+    <!-- filter starts rate -->
+    <div class="white-box-panel margin-bottom-5x">
+      <h5 class="common-title">
+        <span class="icon-star"></span>
+        <strong>Estrellas</strong>
+      </h5>
+      <form>
+        <label for="star-all">
+          <input type="checkbox" name="checkboxes" id="star-all" value="1"> Todas las estrellas
+        </label>
+        <br/>
+        <label for="star-5">
+          <input type="checkbox" name="checkboxes" id="star-5" value="5">
+          <stars-view [number-stars]="5"></stars-view>
+        </label>
+        <br/>
+        <label for="star-4">
+          <input type="checkbox" name="checkboxes" id="star-4" value="4">
+          <stars-view [number-stars]="4"></stars-view>
+        </label>
+        <br/>
+        <label for="star-3">
+          <input type="checkbox" name="checkboxes" id="star-3" value="3">
+          <stars-view [number-stars]="3"></stars-view>
+        </label>
+        <br/>
+        <label for="star-2">
+          <input type="checkbox" name="checkboxes" id="star-2" value="2">
+          <stars-view [number-stars]="2"></stars-view>
+        </label>
+        <br/>
+        <label for="star-1">
+          <input type="checkbox" name="checkboxes" id="star-1" value="1">
+          <stars-view [number-stars]="1"></stars-view>
+        </label>
+        <br/>
+      </form>
+    </div>
+  </div>
+</div>

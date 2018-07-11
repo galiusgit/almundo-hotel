@@ -4,8 +4,8 @@
   "description": "Almundo hotel content (front)",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/galiusgit/almundo-hotel.git"
+    "type": "git",
+    "url": "https://github.com/galiusgit/almundo-hotel.git"
   },
   "scripts": {
     "ng": "ng",

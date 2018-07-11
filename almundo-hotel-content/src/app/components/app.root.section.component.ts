@@ -3,11 +3,10 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-root-section',
-  //templateUrl: './app.root.component.html',
   template: `
   <app-header-section></app-header-section>
-  <app-left-section></app-left-section>
-  <app-right-section></app-right-section>
+  <app-left-section class="col-xs-12 col-sm-3 col-lg-3"></app-left-section>
+  <app-right-section class="col-xs-12 col-sm-9 col-lg-9"></app-right-section>
   <div class="clearfix"></div>
   `,
   styles: [
@@ -15,8 +14,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
       max-height: 30px;
       padding-bottom: 5px;
     }
-    `
-  ]
+    `]
 })
 export class AppRootSectionComponent {
   public modalRef: BsModalRef;

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Almundo hotel API (back)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/galiusgit/almundo-hotel.git"
+  },
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
     "compile": "tsc --p tsconfig.json",
