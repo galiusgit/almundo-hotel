@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-header-section',
   template: `
   <div class="col-xs-12 col-sm-12 col-lg-12 header-section-container">
-  <img alt="Almundo logo" src="assets/images/logo-almundo.svg" data-file-width="512" data-file-height="512">
+  <img alt="Almundo logo" src="assets/images/logo-almundo.svg" data-file-width="512" data-file-height="512"/>
   </div>
   `,
   styles: [

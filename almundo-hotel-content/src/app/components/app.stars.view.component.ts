@@ -3,12 +3,14 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'stars-view',
   template: `
-    <span *ngFor="let starNum of starArr" class="icon-star star-{{starNum}}"></span>
-    &nbsp;&nbsp;
+    <span tooltip="{{numberStars}} estrellas">
+      <span *ngFor="let starNum of starArr" class="icon-star star-{{starNum}}"></span>
+    </span>
   `,
   styles: [
     `.icon-star{
       color: #FFBB00;
+      margin-right: 3px;
     }` 
   ]
 })

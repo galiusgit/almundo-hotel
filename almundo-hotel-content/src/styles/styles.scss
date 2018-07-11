@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '../icomoon-resource/style.css';
+@import "./bootstrap-mq.scss";
 
 body{
     background: #F4F4F4;
@@ -11,7 +12,7 @@ app-header-section{
 
 .white-box-panel{
     background: #FFFFFF;
-    padding: 5px;
+    padding: 6px;
     -webkit-box-shadow: 1px 1px 5px 0px rgba(199,199,199,1);
     -moz-box-shadow: 1px 1px 5px 0px rgba(199,199,199,1);
     box-shadow: 1px 1px 5px 0px rgba(199,199,199,1);
@@ -39,17 +40,103 @@ app-header-section{
 
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #144484 !important;
+    background-color: #002979 !important;
 }
 
 .hotel-summary-view{
     .white-box-panel{
-        max-height: 200px;
+        height: 200px;
+        width: 100%;
+        position: relative;
     }
     .img-responsive {
-        display: block;
-        width: auto;
-        //max-height: 100%;
-        max-height: 189px;
+        max-height: 200px;
     }
+    .summry-items{
+        padding: 6px;
+    }
+    .vertical-separator{
+        border-right: 1px dashed #D2D2D2;
+        height: 96%;
+        display: inline-block;
+        position: absolute;
+    }
+    .icon-amenities{
+        span{
+            font-size: 20px;
+            margin-right: 7px;
+        }
+    }
+    #go-to-hotel{
+        width: 135px;
+    }
+    .price-filter{
+        color: #E16800;
+        display: table;
+        margin: 0 auto;
+        .currency{
+            font-size: 18px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .price{
+            font-size: 30px;
+            display: table-cell;
+        }
+    }
+}
+
+.is-table-row {
+    display: table;
+
+    [class*="col-"], .table-col {
+        float: none;
+        display: table-cell;
+        //vertical-align: top;
+    }
+
+    &--top {
+        vertical-align: top;
+    }
+    &--center {
+        vertical-align: middle;
+    }
+    &--bottom {
+        vertical-align: bottom;
+    }
+}
+
+// Very small devices (tablets, 480px and up)
+@media (min-width: $screen-xs-min) {
+
+}
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm-min) {
+
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md-min) {
+
+}
+
+// Large devices (large desktops, 1200px and up)
+@media (min-width: $screen-lg-min) {
+
+}
+
+/* We occasionally expand on these media queries to include a max-width to limit CSS to a narrower set of devices. */
+
+// 0 and up 768px
+@media (max-width: $screen-xs-max) {
+
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+	
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+
 }

@@ -1,23 +1,30 @@
 <div>
   <br/>
   <span *ngFor="let hotel of hotels" class="hotel-summary-view">
-    <div class="white-box-panel">
-      <div class="image-section col-xs-12 col-sm-4 col-lg-4 no-padding-margin">
-        <img src="assets/images/hotels/{{hotel.image}}" class="img-responsive" alt="Image {{hotel.name}}" />
+    <div class="white-box-panel is-table-row">
+      <div class="col-xs-12 col-sm-3 col-lg-3 is-table-row--center no-padding-margin text-center">
+        <img src="assets/images/hotels/{{hotel.image}}" alt="Image {{hotel.name}}" class="img-responsive"
+        />
       </div>
-      <div class="summry-items col-xs-12 col-sm-5 col-lg-5 no-padding-margin">
-        <h4>{{hotel.name}}</h4>
+      <div class="summry-items table-col">
+        <h4 class="common-title">{{hotel.name}}</h4>
         <div class="start-rate-component">
           <stars-view [number-stars]="hotel.stars"></stars-view>
         </div>
-        <div class="icon-amenities"></div>
+        <div class="icon-amenities">
+          <span *ngFor="let amenitie of hotel.amenities" class="icon-{{amenitie}}" tooltip="{{amenitie}}"></span>
+        </div>
         <div class="summry-items-description"></div>
       </div>
-      <div class="summry-price col-xs-12 col-sm-3 col-lg-3 no-padding-margin">
-        <label>Precio por habitación</label>
-        <div class="price-filter">ARS 863</div>
+      <div class="vertical-separator">&nbsp;</div>
+      <div class="summry-price col-xs-12 col-sm-3 col-lg-3 text-center is-table-row--center">
+        <p>Precio por noche <br/>por habitación</p>
+        <div class="price-filter">
+          <span class="currency">ARS</span>
+          <strong class="price">&nbsp;863</strong>
+        </div>
         <a href="#">
-          <button id="singlebutton" name="singlebutton" class="btn btn-primary">Ver Hotel</button>
+          <button id="go-to-hotel" name="go-to-hotel" class="btn btn-primary">Ver Hotel</button>
         </a>
       </div>
       <div class="clearfix"></div>

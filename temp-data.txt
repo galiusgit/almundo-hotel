@@ -5,3 +5,9 @@ https://github.com/loiane/angular-bootstrap-example
 ---------------------------
 
 versión que tenía en la oficina nodeja: node -v - v6.10.3
+
+------------------------ bootstrap sass grid
+https://gist.github.com/akolinski/29403de9ae9efbf56c8b5d5f3329e2ef
+https://gist.github.com/olegpolyakov/0fb16d27b8145d9c5d51
+
+------------------------
