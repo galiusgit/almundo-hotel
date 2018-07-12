@@ -15,4 +15,12 @@ https://gist.github.com/olegpolyakov/0fb16d27b8145d9c5d51
 
 https://valor-software.com/ngx-bootstrap/old/1.8.1/#/dropdowns
 
------------------------
+----------------------- sqlite3 implementation
+
+https://github.com/cdiaz/nestjs-demo
+
+----------------------- swagger implementation
+
+https://docs.nestjs.com/recipes/swagger
+
+https://github.com/nestjs/nest/tree/master/sample/11-swagger
