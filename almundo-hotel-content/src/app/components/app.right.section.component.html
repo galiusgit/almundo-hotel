@@ -6,8 +6,8 @@
         <img src="assets/images/hotels/{{hotel.image}}" alt="Image {{hotel.name}}" class="img-responsive"
         />
       </div>
-      <div class="summry-items table-col">
-        <h4 class="common-title">{{hotel.name}}</h4>
+      <div class="summry-items col-xs-12 col-sm-6 col-lg-6 table-col">
+        <h5 class="common-title"><strong>{{hotel.name}}</strong></h5>
         <div class="start-rate-component">
           <stars-view [number-stars]="hotel.stars"></stars-view>
         </div>
@@ -16,9 +16,10 @@
         </div>
         <div class="summry-items-description"></div>
       </div>
-      <div class="vertical-separator">&nbsp;</div>
-      <div class="summry-price col-xs-12 col-sm-3 col-lg-3 text-center is-table-row--center">
-        <p>Precio por noche <br/>por habitación</p>
+      <div class="vertical-separator hidden-xs">&nbsp;</div>
+      <div class="horizontal-separator visible-xs">&nbsp;</div>
+      <div class="summary-price col-xs-12 col-sm-3 col-lg-3 text-center is-table-row--center">
+        <p>Precio por noche <br class="hidden-xs"/>por habitación</p>
         <div class="price-filter">
           <span class="currency">ARS</span>
           <strong class="price">&nbsp;863</strong>

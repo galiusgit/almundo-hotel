@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Almundo hotel content (front)",
   "license": "MIT",
+  "email" : "jorgeromen27@gmail.com",
+  "author": {
+    "email": "jorgeromen27@gmail.com",
+    "name": "Jorge Romero",
+    "url": "https://www.linkedin.com/in/jorge-luis-romero-casta%C3%B1eda-04791167/"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/galiusgit/almundo-hotel.git"

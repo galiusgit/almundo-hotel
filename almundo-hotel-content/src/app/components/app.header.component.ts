@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header-section',
   template: `
-  <div class="col-xs-12 col-sm-12 col-lg-12 header-section-container">
-  <img alt="Almundo logo" src="assets/images/logo-almundo.svg" data-file-width="512" data-file-height="512"/>
-  </div>
+  <nav class="navbar navbar-default header-section-container">
+      <div class="container-fluid">
+          <div class="navbar-header">
+          <img alt="Almundo logo" src="assets/images/logo-almundo.svg" data-file-width="512" data-file-height="512"/>
+          </div>
+          <ul class="nav navbar-nav ml-auto">
+              <li class="active">
+              <a href="/report">Link <span class="sr-only">(current)</span></a></li>
+              <li><a href="/manager">Link</a></li>
+          </ul>
+      </div>
+  </nav>
   `,
   styles: [
     `.header-section-container{
@@ -15,6 +24,12 @@ import { Component } from '@angular/core';
       }
     `]
 })
-export class AppHeaderSectionComponent {
-  title: string = "App Header Section Component";
+export class AppHeaderSectionComponent implements OnInit {
+  
+  public title: string = "App Header Section Component";
+
+  public ngOnInit(): void {
+    //throw new Error("Method not implemented.");
+  }
+
 }

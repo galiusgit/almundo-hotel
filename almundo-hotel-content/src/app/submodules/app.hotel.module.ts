@@ -14,4 +14,4 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule]
 })
-export class AppHotelModule {}
+export class AppHotelModule { }

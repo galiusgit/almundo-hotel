@@ -2,20 +2,14 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '../icomoon-resource/style.css';
 @import "./bootstrap-mq.scss";
+@import "./variables.scss";
 
 body{
-    background: #F4F4F4;
-}
-app-header-section{
-    background: #144484;
+    background: $color-background-default;
 }
 
-.white-box-panel{
-    background: #FFFFFF;
-    padding: 6px;
-    -webkit-box-shadow: 1px 1px 5px 0px rgba(199,199,199,1);
-    -moz-box-shadow: 1px 1px 5px 0px rgba(199,199,199,1);
-    box-shadow: 1px 1px 5px 0px rgba(199,199,199,1);
+app-header-section{
+    background: #144484;
 }
 
 .margin-bottom-5x {
@@ -23,37 +17,78 @@ app-header-section{
 }
 
 .color-blue{
-    color: #0679B3;
+    color: $color-primary-dark-blue;
 }
 
 .common-title{
-    color: #0679B3;
+    color: $color-primary-dark-blue;
 }
 
 .app-root-section{
-    background: #F4F4F4;
+    background: $color-background-default;
 }
 .no-padding-margin {
     padding: 0 !important;
     margin: 0 !important;
  }
 
-
+//replace primary button bootstrap style
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: #002979 !important;
 }
 
+//white panel
+.white-box-panel{
+    background: #FFFFFF;
+    padding: 7px;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(199,199,199,1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(199,199,199,1);
+    box-shadow: 1px 1px 5px 0px rgba(199,199,199,1);
+}
+
+//----------------
+.filter-component{
+    .icon-filter{
+        cursor: pointer;
+        color: $color-primary-dark-blue;
+        font-size: 10px;
+        float: right;
+    }
+}
+
+//----------------
 .hotel-summary-view{
     .white-box-panel{
-        height: 200px;
+        height: 176px;
         width: 100%;
         position: relative;
+        @media (max-width: $screen-xs-max) {
+            height: auto;
+        }
     }
     .img-responsive {
-        max-height: 200px;
+        max-height: 162px;
+        margin: 0 auto;
+        @media (max-width: $screen-xs-max) {
+            max-height: initial;
+        }
     }
     .summry-items{
-        padding: 6px;
+        padding-left: 10px;
+        padding-right: 6px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        .start-rate-component{
+            font-size: 17px;
+        }
+        .common-title{
+            margin-top: 0px;
+            margin-bottom: 5px;
+            @media (max-width: $screen-xs-max) {
+                margin-top: 8px;
+                font-size: 17px;
+            }
+        }
     }
     .vertical-separator{
         border-right: 1px dashed #D2D2D2;
@@ -61,14 +96,28 @@ app-header-section{
         display: inline-block;
         position: absolute;
     }
+    .horizontal-separator{
+        border-top: 2px dashed #D2D2D2;
+        width: 100%;
+        height: 1px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        float: left;
+    }
     .icon-amenities{
         span{
             font-size: 20px;
-            margin-right: 7px;
+            margin-right: 8px;
+            @media (max-width: $screen-xs-max) {
+                font-size: 24px;
+            }
         }
     }
     #go-to-hotel{
         width: 135px;
+        @media (max-width: $screen-xs-max) {
+            width: 100%;
+        }
     }
     .price-filter{
         color: #E16800;
@@ -84,17 +133,29 @@ app-header-section{
             display: table-cell;
         }
     }
+    @media (max-width: $screen-xs-max) {
+        .summary-price{
+            padding: 0px;
+        }
+    }
 }
 
+//----------------
 .is-table-row {
     display: table;
-
+    @media (max-width: $screen-xs-max) {
+        display: block;
+    }
+    //---
     [class*="col-"], .table-col {
         float: none;
         display: table-cell;
-        //vertical-align: top;
+        @media (max-width: $screen-xs-max) {
+            float: left;
+            display: block;
+        }
     }
-
+    //---
     &--top {
         vertical-align: top;
     }
@@ -104,39 +165,4 @@ app-header-section{
     &--bottom {
         vertical-align: bottom;
     }
-}
-
-// Very small devices (tablets, 480px and up)
-@media (min-width: $screen-xs-min) {
-
-}
-
-// Small devices (tablets, 768px and up)
-@media (min-width: $screen-sm-min) {
-
-}
-
-// Medium devices (desktops, 992px and up)
-@media (min-width: $screen-md-min) {
-
-}
-
-// Large devices (large desktops, 1200px and up)
-@media (min-width: $screen-lg-min) {
-
-}
-
-/* We occasionally expand on these media queries to include a max-width to limit CSS to a narrower set of devices. */
-
-// 0 and up 768px
-@media (max-width: $screen-xs-max) {
-
-}
-
-@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-	
-}
-
-@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-
 }

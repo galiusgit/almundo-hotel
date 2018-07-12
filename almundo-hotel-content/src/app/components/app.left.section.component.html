@@ -12,25 +12,39 @@
       <h5 class="common-title">
         <span class="icon-search"></span>
         <strong>Nombre del hotel</strong>
+        <span class="icon-filter icon-arrow-up"
+        *ngIf="showHotelNameForm"
+        (click)="showHotelNameForm = !showHotelNameForm">&nbsp;</span>
+        <span class="icon-filter icon-arrow-down"
+        *ngIf="!showHotelNameForm"
+        (click)="showHotelNameForm = !showHotelNameForm">&nbsp;</span>
       </h5>
-      <form>
-        <div class="input-group">
-          <!-- Search input-->
-          <input id="searchinput" name="searchinput" type="search" placeholder="Ingrese el nombre del hotel" class="form-control input-md">
-          <!-- Button -->
-          <span class="input-group-btn">
-            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Aceptar</button>
-          </span>
-        </div>
-      </form>
+      <div *ngIf="showHotelNameForm">
+        <form>
+          <div class="input-group">
+            <!-- Search input-->
+            <input id="searchinput" name="searchinput" type="search" placeholder="Ingrese el nombre del hotel" class="form-control input-md">
+            <!-- Button -->
+            <span class="input-group-btn">
+              <button id="singlebutton" name="singlebutton" class="btn btn-primary">Aceptar</button>
+            </span>
+          </div>
+        </form>
+      </div>
     </div>
     <!-- filter starts rate -->
     <div class="white-box-panel margin-bottom-5x">
       <h5 class="common-title">
         <span class="icon-star"></span>
         <strong>Estrellas</strong>
+        <span class="icon-filter icon-arrow-up"
+        *ngIf="showStarsRate"
+        (click)="showStarsRate = !showStarsRate">&nbsp;</span>
+        <span class="icon-filter icon-arrow-down"
+        *ngIf="!showStarsRate"
+        (click)="showStarsRate = !showStarsRate">&nbsp;</span>
       </h5>
-      <form>
+      <form *ngIf="showStarsRate">
         <label for="star-all">
           <input type="checkbox" name="checkboxes" id="star-all" value="1"> Todas las estrellas
         </label>
