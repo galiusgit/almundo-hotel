@@ -10,8 +10,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     CommonModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
-  exports: [BsDropdownModule, TooltipModule, ModalModule]
+  exports: [BsDropdownModule, TooltipModule, ModalModule],
 })
 export class AppHotelModule { }

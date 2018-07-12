@@ -4,5 +4,5 @@ export interface HotelModel {
     stars: number;
     price: number;
     image: string;
-    amenities: Array<string>
+    amenities: Array<string>;
 }

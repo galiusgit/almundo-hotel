@@ -8,13 +8,14 @@ import { AppLeftSectionComponent } from './components/app.left.section.component
 import { AppRightSectionComponent } from './components/app.right.section.component';
 import { StarsViewComponent } from './components/app.stars.view.component';
 import { HotelService } from './services/hotel.service';
+import { RouterUtil } from './util/router.util';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AppHotelManagerComponent } from './components/app.hotel-manager.component';
 import { AppHotelReportComponent } from './components/app.hotel-report.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/report', pathMatch: 'full' },
+  { path: '', redirectTo: 'report', pathMatch: 'full' },
   { path: 'report', component: AppHotelReportComponent },
   { path: 'manager', component: AppHotelManagerComponent },
 ];
@@ -27,14 +28,14 @@ const appRoutes: Routes = [
     AppRightSectionComponent,
     StarsViewComponent,
     AppHotelReportComponent,
-    AppHotelManagerComponent
+    AppHotelManagerComponent,
   ],
   imports: [
     BrowserModule,
     AppHotelModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
-  providers: [HotelService],
-  bootstrap: [AppRootSectionComponent]
+  providers: [HotelService, RouterUtil],
+  bootstrap: [AppRootSectionComponent],
 })
 export class AppMainModule { }

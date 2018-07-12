@@ -1,0 +1,55 @@
+import * as tsJsonSchema from 'typescript-json-schema';
+import * as fs from 'fs';
+
+/**
+ * Json shcema generator.
+ * @export
+ * @class JsonSchemaGenerator
+ */
+export class JsonSchemaGenerator {
+
+    // optionally pass argument to schema generator
+    private settings: tsJsonSchema.PartialArgs = {
+        required: true,
+    };
+
+    // optionally pass ts compiler options
+    private compilerOptions: tsJsonSchema.CompilerOptions = {
+        strictNullChecks: true,
+    };
+
+    /**
+     * Builds the Json Schema by phat list of model files
+     * @param {string[]} phatListModelFiles
+     * @returns {Definition}
+     * @memberof JsonSchemaGenerator
+     */
+    public buildSchemasByPhats(phatListModelFiles: string[]): tsJsonSchema.Definition {
+        const program = tsJsonSchema.getProgramFromFiles(
+            phatListModelFiles, this.compilerOptions);
+
+        // We can either get the schema for one file and one type...
+        // const schema = TJS.generateSchema(program, 'Shape', settings);
+        // ... or a generator that lets us incrementally get more schemas
+        const generator = tsJsonSchema.buildGenerator(program, this.settings);
+
+        const mainFiles = generator.getMainFileSymbols(program);
+        return generator.getSchemaForSymbols(mainFiles);
+    }
+
+    /**
+     * Buls the json schema by definition.
+     * @param {string} jsonFilePhat
+     * @param {Definition} jsonSchemaDefinition
+     * @memberof JsonSchemaGenerator
+     */
+    public buildJsonShemaFileByDefinition(jsonFilePhat: string, jsonSchemaDefinition: tsJsonSchema.Definition){
+        fs.writeFile(jsonFilePhat, JSON.stringify(jsonSchemaDefinition, null, 2), 'utf8', function callback(err){
+            if (err){
+                console.log('Fail writing the json schemas (definitions) to swagger config file: ' + err.message);
+                throw err;
+            }
+        });
+    }
+
+}

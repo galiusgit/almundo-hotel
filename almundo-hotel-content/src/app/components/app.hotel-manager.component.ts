@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
       hotel-manager Works!
     </p>
   `,
-  styles: []
+  styles: [],
 })
 export class AppHotelManagerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }

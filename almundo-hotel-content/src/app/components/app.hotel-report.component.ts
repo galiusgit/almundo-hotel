@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   <app-left-section class="col-xs-12 col-sm-3 col-lg-3"></app-left-section>
   <app-right-section class="col-xs-12 col-sm-9 col-lg-9"></app-right-section>
   `,
-  styles: []
+  styles: [],
 })
 export class AppHotelReportComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }

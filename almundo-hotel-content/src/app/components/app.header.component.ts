@@ -1,35 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterUtil } from '../util/router.util';
 
 @Component({
   selector: 'app-header-section',
   template: `
-  <nav class="navbar navbar-default header-section-container">
+  <nav class="navbar navbar-light header-section-container">
       <div class="container-fluid">
           <div class="navbar-header">
-          <img alt="Almundo logo" src="assets/images/logo-almundo.svg" data-file-width="512" data-file-height="512"/>
+          <!--img alt="Almundo logo" src="assets/images/logo-almundo.svg" data-file-width="512" data-file-height="512"/-->
           </div>
-          <ul class="nav navbar-nav ml-auto">
-              <li class="active">
-              <a href="/report">Link <span class="sr-only">(current)</span></a></li>
-              <li><a href="/manager">Link</a></li>
-          </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="{{getClassAcitveByRoute('/report')}}"><a href="/report"><strong>Reporte</strong></a></li>
+                <li class="{{getClassAcitveByRoute('/manager')}}"><a href="/manager"><strong>Admin</strong></a></li>
+            </ul>
       </div>
-  </nav>
-  `,
+  </nav>`,
   styles: [
     `.header-section-container{
           background: #144484;
-          padding-top: 10px;
-          padding-bottom: 10px;
+          border-radius: unset !important;
+          padding: 5px;
       }
-    `]
+      .navbar-nav>li>a{
+        color: #FFFFFF;
+        border: 1px solid #eee;
+        margin: 2px;
+        border-radius: 4px;
+      }
+      .navbar-nav>li>a:hover{
+        color: #337ab7;
+      }
+    `],
 })
 export class AppHeaderSectionComponent implements OnInit {
-  
-  public title: string = "App Header Section Component";
+  public title: string = 'App Header Section Component';
+
+  constructor(private routerUtil: RouterUtil){}
 
   public ngOnInit(): void {
-    //throw new Error("Method not implemented.");
+    // throw new Error("Method not implemented.");
+  }
+
+  public getClassAcitveByRoute(strRoute: string): string{
+    return this.routerUtil.isRouteActive(strRoute) ? 'active' : '';
   }
 
 }

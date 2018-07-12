@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Almundo hotel API (back)",
   "license": "MIT",
-  "email" : "jorgeromen27@gmail.com",
+  "email": "jorgeromen27@gmail.com",
   "author": {
     "email": "jorgeromen27@gmail.com",
     "name": "Jorge Romero",
@@ -15,14 +15,15 @@
   },
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
-    "compile": "tsc --p tsconfig.json",
-    "start:compile": "node dist/main.js",
-    "start": "ts-node -r tsconfig-paths/register src/main.ts",
-    "start:dev": "nodemon",
-    "start:debug": "nodemon --config nodemon-debug.json",
-    "prestart:prod": "rimraf dist && tsc",
-    "start:prod": "node dist/main.js",
-    "start:hmr": "node dist/server",
+    "copy-resource": "ncp ./resource ./dist/almundo-hotel-api/resource",
+    "clear-dist": "rimraf dist",
+    "build": "npm run lint && npm run clear-dist && tsc --p tsconfig.json && npm run copy-resource",
+    "deploy": "node dist/almundo-hotel-api/src/main.js",
+    "deploy:dev": "nodemon",
+    "deploy:debug": "nodemon --config nodemon-debug.json",
+    "predeploy:prod": "rimraf dist && tsc",
+    "deploy:prod": "node dist/almundo-hotel-api/src/main.js",
+    "deploy:hmr": "node dist/almundo-hotel-api/src/main.hmr.js",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -40,7 +41,8 @@
     "express": "^4.16.3",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.0.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "ncp": "^2.0.0"
   },
   "devDependencies": {
     "@types/express": "^4.0.39",
@@ -56,7 +58,7 @@
     "ts-loader": "^4.1.0",
     "ts-node": "^6.0.0",
     "tsconfig-paths": "^3.3.1",
-    "tslint": "5.3.2",
+    "tslint": "^5.7.0",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13",
     "webpack-node-externals": "^1.6.0"

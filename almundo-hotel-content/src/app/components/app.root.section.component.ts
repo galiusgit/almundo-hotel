@@ -1,10 +1,7 @@
-import { Component, TemplateRef } from '@angular/core';
+import { Component, TemplateRef, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-
-/*
-<app-left-section class="col-xs-12 col-sm-3 col-lg-3"></app-left-section>
-<app-right-section class="col-xs-12 col-sm-9 col-lg-9"></app-right-section>
-*/
+import { Router, NavigationEnd } from '@angular/router';
+import { RouterUtil } from '../util/router.util';
 
 @Component({
   selector: 'app-root-section',
@@ -18,13 +15,34 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
       max-height: 30px;
       padding-bottom: 5px;
     }
-    `]
+    `],
 })
-export class AppRootSectionComponent {
+export class AppRootSectionComponent implements OnInit {
+
   public modalRef: BsModalRef;
-  constructor(private modalService: BsModalService) { }
+
+  public currentRoute: string;
+
+  constructor(
+    private modalService: BsModalService,
+    private router: Router,
+    private routerUtil: RouterUtil,
+  ) {
+    this.buildCurrentRoute();
+  }
+
+  private buildCurrentRoute(): void {
+    this.router.events.filter((event: any) => event instanceof NavigationEnd)
+        .subscribe(event => {
+            this.routerUtil.setCurrentRoute(event.url);
+        });
+  }
 
   public openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
+  }
+
+  public ngOnInit(): void {
+    // console.log('currentRoute: ', this.currentRoute);
   }
 }

@@ -1,0 +1,127 @@
+                    ------->          <-------
+                    -------> TEMPDATA <-------
+                    ------->          <-------
+
+Aquí se adjunta todo tipo de información que tenga que ver con el proyecto, 
+ya sea código, descripciones, changeset's, cosas por hacer (TODO), revisar (CHECK) etc.
+
+----------------------------------------------------------------
+
+TODO:
+- Falta implementar como agregar este documento a los docs generados para el desarrollador
+
+----------------------------------------------------------------
+
+TODO: Check A readthedocs style jsdoc template.
+
+https://www.npmjs.com/package/jsdoc-rtd
+https://github.com/nhnent/tui.jsdoc-template
+
+----------------------------------------------------------------
+
+TODO:
+Hay nueva versión de typescript (revisar): https://www.npmjs.com/package/typescript
+
+----------------------------------------------------------------
+
+TODO:
+Es necesairo implementar mongoose: https://www.npmjs.com/package/@nestjs/mongoose
+
+https://docs.nestjs.com/techniques/mongodb
+
+----------------------------------------------------------------
+
+CHECK:
+Por si se necesita Aquí hay ORM: https://www.npmjs.com/package/@nestjs/typeorm
+
+----------------------------------------------------------------
+
+CHECK:
+Para instalar sólo producción: npm install --production
+
+----------------------------------------------------------------
+
+TODO: Falta implementar continuous delivery
+
+check:
+- http://olado.github.io/doT/index.html
+
+----------------------------------------------------------------
+
+TODO: Falta revisar scafolding para el fron, revisar las tecnologías más apropiadas
+
+----------------------------------------------------------------
+
+TODO: El perfil fe pruebas se debe cubrir con automatización, por lo tanto,
+es necesario ver la tecnología más apropiada y muy rápida
+
+----------------------------------------------------------------
+
+TODO: implementación de sistema de logs para APIs
+
+----------------------------------------------------------------
+En la actualización de versiones de las dependencias existen inconsistencias con:
+- typedoc
+
+solucionado: jsdoc
+solucionado: typedoc
+"build:docs": "gulp typedoc && gulp jsdoc",
+https://www.npmjs.com/package/typedoc
+
+"typedoc": "^0.11.1", con esta version falla
+"typedoc": "^0.10.0", 
+"typedoc": "^0.9.0", con esta version funciona
+
+TODO: Todavía surgen errores con la tarea: jsdoc (arreglar)
+
+----------------------------------------------------------------
+TODO: revisar
+La versión de gulp aumento:
+"@types/gulp": "^3.8.35",
+El conflicto o error anterior puede pasar por esta version de gulp
+"gulp": "^3.9.1",
+
+al parecer la siguiente dependencia no se esta utilizando:
+"gulpclass": "^0.1.2",
+
+----------------------------------------------------------------
+
+TODO: revisar las nuevas versiones de nestjs: https://www.npmjs.com/org/nestjs
+
+----------------------------------------------------------------
+
+Template para el admin: https://adminlte.io/themes/AdminLTE/index2.html
+http://www.free-css.com/free-css-templates/page210/adminlte
+
+Template code:
+http://www.free-css.com/assets/files/free-css-templates/preview/page209/devaid/
+
+
+----------------------------------------------------------------
+
+[27/3 1:03 AM] jorge romero: https://dcrazed.com/free-responsive-html5-css3-templates/
+[27/3 1:04 AM] jorge romero: http://demo.themeum.com/html/oxygen/
+[27/3 1:06 AM] jorge romero: http://p.w3layouts.com/demos/mabur/web/
+[27/3 1:10 AM] jorge romero: https://p.w3layouts.com/demos_new/template_demo/09-10-2017/gusto-demo_Free/2051828938/web/index.html
+[27/3 1:12 AM] jorge romero: https://p.w3layouts.com/demos_new/template_demo/11-12-2017/explore-demo_Free/1085021436/web/index.html
+[27/3 1:20 AM] jorge romero: http://demo.themewagon.com/preview/awesome-free-one-page-responsive-html5-template
+[27/3 1:22 AM] jorge romero: https://themewagon.com/41-free-high-quality-responsive-personal-portfolio-website-html5-bootstrap-templates-2017/
+
+----> https://dcrazed.com/free-responsive-html5-css3-templates/
+Asentus: http://keenthemes.com/
+Numero: https://dcrazed.com/html/numero-demo/
+INDUSTRIOUS: https://templated.co/items/demos/industrious/index.html
+Oxygen: http://demo.themeum.com/html/oxygen/
+Mabur Portfolio: http://p.w3layouts.com/demos/mabur/web/
+
+https://www.youtube.com/watch?v=HLXDiIDI9YU
+
+https://p.w3layouts.com/demos_new/template_demo/09-10-2017/gusto-demo_Free/2051828938/web/index.html
+https://p.w3layouts.com/demos_new/template_demo/11-12-2017/explore-demo_Free/1085021436/web/index.html
+https://dcrazed.com/html/sporthere-demo/
+
+
+http://www.free-css.com/free-css-templates/page220/aesthetic
+http://www.free-css.com/free-css-templates/page217/lexis
+http://www.free-css.com/free-css-templates/page211/bazinger
+http://www.free-css.com/free-css-templates/page205/solid
