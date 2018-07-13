@@ -1,14 +1,19 @@
 <div>
-  <br/>
+  <br class="hidden-xs" />
   <div class="filter-component">
     <!-- filter title -->
-    <div class="white-box-panel margin-bottom-5x">
+    <div class="white-box-panel margin-bottom-5x filter-title">
       <h4>
-        <strong>Filtros</strong>
+        <strong class="hidden-xs">Filtros
+        </strong>
+        <strong class="common-title visible-xs">Filtrar
+          <span class="icon-filter icon-arrow-up" *ngIf="showFilterXs" (click)="showFilterXs = !showFilterXs">&nbsp;</span>
+          <span class="icon-filter icon-arrow-down" *ngIf="!showFilterXs" (click)="showFilterXs = !showFilterXs">&nbsp;</span>
+        </strong>
       </h4>
     </div>
     <!-- form section -->
-    <form #filterForm="ngForm" (ngSubmit)="onClickSubmit(filterForm.value)">
+    <form #filterForm="ngForm" (ngSubmit)="onClickSubmit(filterForm.value)" *ngIf="showFilterXs">
       <div class="white-box-panel margin-bottom-5x">
         <h5 class="common-title">
           <span class="icon-search"></span>
@@ -19,7 +24,8 @@
         <div *ngIf="showHotelNameForm">
           <div class="input-group">
             <!-- Search input-->
-            <input id="searchinput" name="name" type="search" placeholder="Ingrese el nombre del hotel" class="form-control input-md" ngModel/>
+            <input id="searchinput" name="name" type="search" placeholder="Ingrese el nombre del hotel" class="form-control input-md"
+              ngModel/>
             <!-- Button -->
             <span class="input-group-btn">
               <button id="singlebutton" type="submit" value="submit" name="singlebutton" class="btn btn-primary">Aceptar</button>
@@ -37,48 +43,37 @@
         </h5>
         <div *ngIf="showStarsRate">
           <label for="star-all">
-            <input type="checkbox" name="stars" class="stars-input" id="star-all" value="0"
-            [checked]="isAllChecked"
-            (change)="allChecked(0, $event)"/> Todas las estrellas
+            <input type="checkbox" name="stars" class="stars-input" id="star-all" value="0" [checked]="isAllChecked" (change)="allChecked(0, $event)"
+            /> Todas las estrellas
           </label>
           <br/>
           <label for="star-5">
-            <input type="checkbox" name="stars" class="stars-input" id="star-5" value="5" 
-            [disabled]="isAllChecked"
-            [checked]="optionsMap[5]"
-            (change)="updateChecked(5, $event)"/>
+            <input type="checkbox" name="stars" class="stars-input" id="star-5" value="5" [disabled]="isAllChecked" [checked]="optionsMap[5]"
+              (change)="updateChecked(5, $event)" />
             <stars-view [number-stars]="5"></stars-view>
           </label>
           <br/>
           <label for="star-4">
-            <input type="checkbox" name="stars" class="stars-input" id="star-4" value="4" 
-            [disabled]="isAllChecked"
-            [checked]="optionsMap[4]"
-            (change)="updateChecked(4, $event)"/>
+            <input type="checkbox" name="stars" class="stars-input" id="star-4" value="4" [disabled]="isAllChecked" [checked]="optionsMap[4]"
+              (change)="updateChecked(4, $event)" />
             <stars-view [number-stars]="4"></stars-view>
           </label>
           <br/>
           <label for="star-3">
-            <input type="checkbox" name="stars" class="stars-input" id="star-3" value="3" 
-            [disabled]="isAllChecked"
-            [checked]="optionsMap[3]"
-            (change)="updateChecked(3, $event)"/>
+            <input type="checkbox" name="stars" class="stars-input" id="star-3" value="3" [disabled]="isAllChecked" [checked]="optionsMap[3]"
+              (change)="updateChecked(3, $event)" />
             <stars-view [number-stars]="3"></stars-view>
           </label>
           <br/>
           <label for="star-2">
-            <input type="checkbox" name="stars" class="stars-input" id="star-2" value="2" 
-            [disabled]="isAllChecked"
-            [checked]="optionsMap[2]"
-            (change)="updateChecked(2, $event)"/>
+            <input type="checkbox" name="stars" class="stars-input" id="star-2" value="2" [disabled]="isAllChecked" [checked]="optionsMap[2]"
+              (change)="updateChecked(2, $event)" />
             <stars-view [number-stars]="2"></stars-view>
           </label>
           <br/>
           <label for="star-1">
-            <input type="checkbox" name="stars" class="stars-input" id="star-1" value="1" 
-            [disabled]="isAllChecked"
-            [checked]="optionsMap[1]"
-            (change)="updateChecked(1, $event)"/>
+            <input type="checkbox" name="stars" class="stars-input" id="star-1" value="1" [disabled]="isAllChecked" [checked]="optionsMap[1]"
+              (change)="updateChecked(1, $event)" />
             <stars-view [number-stars]="1"></stars-view>
           </label>
           <br/>

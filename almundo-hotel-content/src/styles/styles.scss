@@ -12,6 +12,12 @@ app-header-section{
     background: #144484;
 }
 
+app-left-section{
+    @media (max-width: $screen-xs-max) {
+        padding: 0 !important;
+    }
+}
+
 .margin-bottom-5x {
     margin-bottom: 5px;
 }
@@ -30,6 +36,10 @@ app-header-section{
 .no-padding-margin {
     padding: 0 !important;
     margin: 0 !important;
+ }
+
+ .navbar{
+    margin-bottom: 0px;
  }
 
 //replace primary button bootstrap style
@@ -53,6 +63,14 @@ app-header-section{
         color: $color-primary-dark-blue;
         font-size: 10px;
         float: right;
+    }
+    .filter-title{
+        @media (max-width: $screen-xs-max) {
+            text-align: center;
+        }
+    }
+    .icon-filter{
+        float: none;
     }
 }
 

@@ -22,6 +22,12 @@ export class AppLeftSectionComponent implements OnInit {
    * @type {boolean}
    * @memberof AppLeftSectionComponent
    */
+  public showFilterXs: boolean = true;
+
+  /**
+   * @type {boolean}
+   * @memberof AppLeftSectionComponent
+   */
   public showHotelNameForm: boolean = true;
 
   /**
