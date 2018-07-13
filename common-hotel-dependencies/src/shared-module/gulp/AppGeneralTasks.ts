@@ -102,7 +102,7 @@ export class AppGeneralTasks {
     private addTypeDocTask() {
         gulp.task(AppGeneralGulpTask.TYPEDOC, () => {
             return gulp
-                .src(['gulpfile.ts', 'src/**/*.ts'])
+                .src(['gulpfile.ts', 'src/**/*.ts', '../almundo-hotel-content/src/**/*.ts', '../almundo-hotel-api/src/**/*.ts'])
                 .pipe(typedoc(this.typeDocOptions));
         });
     }
@@ -130,7 +130,8 @@ export class AppGeneralTasks {
     private addJsDocTask() {
         gulp.task(AppGeneralGulpTask.JSDOC, (callback) => {
             const srcCode = ['README.md', './gulpfile.js',
-                './dist/modules/**/*.js', './dist/shared-module/**/*.js'];
+                './dist/modules/**/*.js', './dist/shared-module/**/*.js',
+                '../almundo-hotel-content/dist/**/*.js', '../dist/almundo-hotel-api/src/**/*.js'];
             gulp.src(srcCode, { read: false })
                 .pipe(jsdoc(this.jsDocConfig, callback));
         });
