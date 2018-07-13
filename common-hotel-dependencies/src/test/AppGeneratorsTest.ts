@@ -1,7 +1,9 @@
 // ---- imports
-import { suite, test, slow, timeout } from 'mocha-typescript';
+import { suite, test } from 'mocha-typescript';
 import { AppGenerators } from '../AppGenerators';
 import { LoggerUtil } from '../shared-module/core/util/LoggerUtil';
+import { Glob } from 'glob';
+import * as fs from 'fs';
 import * as assert from 'assert';
 
 // ----------- requires
@@ -15,39 +17,19 @@ interface GlobToRegexpTest {
 
 const logger: LoggerUtil = new LoggerUtil('AppGeneratorsTest', __filename);
 
-const timeout_test = 3000;
-const slow_test = 1000;
-
 /**
  * AppGeneratorsTest
  * @export
  * @class AppGeneratorsTest
  */
-@suite(timeout(timeout_test), slow(slow_test))
-export class AppGeneratorsTest {
+@suite export class AppGeneratorsTest {
     /**
      * MAIN_PATH
      * @private
      * @static
      * @memberof AppGeneratorsTest
      */
-    private static MAIN_PATH = './src/test/example-module';
-
-    /**
-     * App generators test.
-     * @private
-     * @type {AppGenerators}
-     * @memberof AppGeneratorsTest
-     */
-    private appGeneratorsTest: AppGenerators;
-
-    /**
-     * Creates an instance of AppGeneratorsTest.
-     * @memberof AppGeneratorsTest
-     */
-    constructor(){
-        this.appGeneratorsTest = new AppGenerators(AppGeneratorsTest.MAIN_PATH);
-    }
+    private static MAIN_PATH = './example-module';
 
     /**
      * Regex for search typescript file models from main application, valid cases.
@@ -108,21 +90,18 @@ export class AppGeneratorsTest {
      */
     @test('Gets the module list of main application.')
     public getTheModuleListOfMainApplication(): void{
-        const expectedListDirectories: Array<string> = [
-            'src\\test\\example-module\\modules\\example',
-            'src\\test\\example-module\\modules\\otro',
-        ];
-        const listDirectoriesResult = this.appGeneratorsTest.getModuleDirectories();
-        logger.info('module list expected: ', expectedListDirectories);
-        logger.info('module list result: ', listDirectoriesResult);
-        for (const expectedDirectoryIndex in expectedListDirectories){
-            if (expectedListDirectories[expectedDirectoryIndex]) {
-                const expectedDirectory = expectedListDirectories[expectedDirectoryIndex];
-                if (listDirectoriesResult.indexOf(expectedDirectory) < 0){
-                    assert.fail('The directory of module: ' + expectedDirectory + ', was not found.');
-                }
-            }
+        const pattern1 = AppGeneratorsTest.MAIN_PATH + '/modules/*';
+
+        const result = fs.readdirSync(pattern1);
+
+        logger.log('---> pattern1: ', pattern1);
+        logger.log('---> result: ', result);
+        const pathModels = new Glob(pattern1, { mark: true, sync: true });
+        if (pathModels.error) {
+            logger.error('There was an error getting the the module list. ', pathModels.error);
+            throw new Error(pathModels.error);
         }
+        logger.log('---> pathModels.found: ', pathModels.found);
     }
 
 }

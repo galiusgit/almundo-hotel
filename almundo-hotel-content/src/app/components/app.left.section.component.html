@@ -8,73 +8,82 @@
       </h4>
     </div>
     <!-- form section -->
-    <div class="white-box-panel margin-bottom-5x">
-      <h5 class="common-title">
-        <span class="icon-search"></span>
-        <strong>Nombre del hotel</strong>
-        <span class="icon-filter icon-arrow-up"
-        *ngIf="showHotelNameForm"
-        (click)="showHotelNameForm = !showHotelNameForm">&nbsp;</span>
-        <span class="icon-filter icon-arrow-down"
-        *ngIf="!showHotelNameForm"
-        (click)="showHotelNameForm = !showHotelNameForm">&nbsp;</span>
-      </h5>
-      <div *ngIf="showHotelNameForm">
-        <form>
+    <form #filterForm="ngForm" (ngSubmit)="onClickSubmit(filterForm.value)">
+      <div class="white-box-panel margin-bottom-5x">
+        <h5 class="common-title">
+          <span class="icon-search"></span>
+          <strong>Nombre del hotel</strong>
+          <span class="icon-filter icon-arrow-up" *ngIf="showHotelNameForm" (click)="showHotelNameForm = !showHotelNameForm">&nbsp;</span>
+          <span class="icon-filter icon-arrow-down" *ngIf="!showHotelNameForm" (click)="showHotelNameForm = !showHotelNameForm">&nbsp;</span>
+        </h5>
+        <div *ngIf="showHotelNameForm">
           <div class="input-group">
             <!-- Search input-->
-            <input id="searchinput" name="searchinput" type="search" placeholder="Ingrese el nombre del hotel" class="form-control input-md">
+            <input id="searchinput" name="name" type="search" placeholder="Ingrese el nombre del hotel" class="form-control input-md" ngModel/>
             <!-- Button -->
             <span class="input-group-btn">
-              <button id="singlebutton" name="singlebutton" class="btn btn-primary">Aceptar</button>
+              <button id="singlebutton" type="submit" value="submit" name="singlebutton" class="btn btn-primary">Aceptar</button>
             </span>
           </div>
-        </form>
+        </div>
       </div>
-    </div>
-    <!-- filter starts rate -->
-    <div class="white-box-panel margin-bottom-5x">
-      <h5 class="common-title">
-        <span class="icon-star"></span>
-        <strong>Estrellas</strong>
-        <span class="icon-filter icon-arrow-up"
-        *ngIf="showStarsRate"
-        (click)="showStarsRate = !showStarsRate">&nbsp;</span>
-        <span class="icon-filter icon-arrow-down"
-        *ngIf="!showStarsRate"
-        (click)="showStarsRate = !showStarsRate">&nbsp;</span>
-      </h5>
-      <form *ngIf="showStarsRate">
-        <label for="star-all">
-          <input type="checkbox" name="checkboxes" id="star-all" value="1"> Todas las estrellas
-        </label>
-        <br/>
-        <label for="star-5">
-          <input type="checkbox" name="checkboxes" id="star-5" value="5">
-          <stars-view [number-stars]="5"></stars-view>
-        </label>
-        <br/>
-        <label for="star-4">
-          <input type="checkbox" name="checkboxes" id="star-4" value="4">
-          <stars-view [number-stars]="4"></stars-view>
-        </label>
-        <br/>
-        <label for="star-3">
-          <input type="checkbox" name="checkboxes" id="star-3" value="3">
-          <stars-view [number-stars]="3"></stars-view>
-        </label>
-        <br/>
-        <label for="star-2">
-          <input type="checkbox" name="checkboxes" id="star-2" value="2">
-          <stars-view [number-stars]="2"></stars-view>
-        </label>
-        <br/>
-        <label for="star-1">
-          <input type="checkbox" name="checkboxes" id="star-1" value="1">
-          <stars-view [number-stars]="1"></stars-view>
-        </label>
-        <br/>
-      </form>
-    </div>
+      <!-- filter starts rate -->
+      <div class="white-box-panel margin-bottom-5x">
+        <h5 class="common-title">
+          <span class="icon-star"></span>
+          <strong>Estrellas</strong>
+          <span class="icon-filter icon-arrow-up" *ngIf="showStarsRate" (click)="showStarsRate = !showStarsRate">&nbsp;</span>
+          <span class="icon-filter icon-arrow-down" *ngIf="!showStarsRate" (click)="showStarsRate = !showStarsRate">&nbsp;</span>
+        </h5>
+        <div *ngIf="showStarsRate">
+          <label for="star-all">
+            <input type="checkbox" name="stars" class="stars-input" id="star-all" value="0"
+            [checked]="isAllChecked"
+            (change)="allChecked(0, $event)"/> Todas las estrellas
+          </label>
+          <br/>
+          <label for="star-5">
+            <input type="checkbox" name="stars" class="stars-input" id="star-5" value="5" 
+            [disabled]="isAllChecked"
+            [checked]="optionsMap[5]"
+            (change)="updateChecked(5, $event)"/>
+            <stars-view [number-stars]="5"></stars-view>
+          </label>
+          <br/>
+          <label for="star-4">
+            <input type="checkbox" name="stars" class="stars-input" id="star-4" value="4" 
+            [disabled]="isAllChecked"
+            [checked]="optionsMap[4]"
+            (change)="updateChecked(4, $event)"/>
+            <stars-view [number-stars]="4"></stars-view>
+          </label>
+          <br/>
+          <label for="star-3">
+            <input type="checkbox" name="stars" class="stars-input" id="star-3" value="3" 
+            [disabled]="isAllChecked"
+            [checked]="optionsMap[3]"
+            (change)="updateChecked(3, $event)"/>
+            <stars-view [number-stars]="3"></stars-view>
+          </label>
+          <br/>
+          <label for="star-2">
+            <input type="checkbox" name="stars" class="stars-input" id="star-2" value="2" 
+            [disabled]="isAllChecked"
+            [checked]="optionsMap[2]"
+            (change)="updateChecked(2, $event)"/>
+            <stars-view [number-stars]="2"></stars-view>
+          </label>
+          <br/>
+          <label for="star-1">
+            <input type="checkbox" name="stars" class="stars-input" id="star-1" value="1" 
+            [disabled]="isAllChecked"
+            [checked]="optionsMap[1]"
+            (change)="updateChecked(1, $event)"/>
+            <stars-view [number-stars]="1"></stars-view>
+          </label>
+          <br/>
+
+        </div>
+      </div>
+    </form>
   </div>
-</div>

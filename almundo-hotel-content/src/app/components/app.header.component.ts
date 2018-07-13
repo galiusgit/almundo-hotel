@@ -7,7 +7,7 @@ import { RouterUtil } from '../util/router.util';
   <nav class="navbar navbar-light header-section-container">
       <div class="container-fluid">
           <div class="navbar-header">
-          <!--img alt="Almundo logo" src="assets/images/logo-almundo.svg" data-file-width="512" data-file-height="512"/-->
+          <img alt="Almundo logo" src="assets/images/logo-almundo.svg" data-file-width="512" data-file-height="512"/>
           </div>
             <ul class="nav navbar-nav navbar-right">
                 <li class="{{getClassAcitveByRoute('/report')}}"><a href="/report"><strong>Reporte</strong></a></li>

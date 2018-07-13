@@ -56,7 +56,7 @@
       "inlineTemplate": true
     },
     "serve": {
-      "port": 4444,
+      "port": 4200,
       "host": "localhost"
     },
     "directive": {

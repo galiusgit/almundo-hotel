@@ -17,6 +17,7 @@
     "ng": "ng",
     "deploy": "ng serve",
     "build": "ng build",
+    "deploy:prod": "ng serve --prod",
     "compile": "tsc --p tsconfig.json",
     "test": "echo \"Error: no test... minimal project\" && exit 1",
     "lint": "echo \"Error: no lint... minimal project\" && exit 1"

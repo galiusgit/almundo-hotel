@@ -3,26 +3,28 @@
   <span *ngFor="let hotel of hotels" class="hotel-summary-view">
     <div class="white-box-panel is-table-row">
       <div class="col-xs-12 col-sm-3 col-lg-3 is-table-row--center no-padding-margin text-center">
-        <img src="assets/images/hotels/{{hotel.image}}" alt="Image {{hotel.name}}" class="img-responsive"
-        />
+        <img src="assets/images/hotels/{{hotel.image}}" alt="Image {{hotel.name}}" class="img-responsive" />
       </div>
       <div class="summry-items col-xs-12 col-sm-6 col-lg-6 table-col">
-        <h5 class="common-title"><strong>{{hotel.name}}</strong></h5>
+        <h5 class="common-title">
+          <strong>{{hotel.name}}</strong>
+        </h5>
         <div class="start-rate-component">
           <stars-view [number-stars]="hotel.stars"></stars-view>
         </div>
         <div class="icon-amenities">
           <span *ngFor="let amenitie of hotel.amenities" class="icon-{{amenitie}}" tooltip="{{amenitie}}"></span>
         </div>
-        <div class="summry-items-description"></div>
+        <div class="summry-items-description">{{hotel.description}}</div>
       </div>
       <div class="vertical-separator hidden-xs">&nbsp;</div>
       <div class="horizontal-separator visible-xs">&nbsp;</div>
       <div class="summary-price col-xs-12 col-sm-3 col-lg-3 text-center is-table-row--center">
-        <p>Precio por noche <br class="hidden-xs"/>por habitación</p>
+        <p>Precio por noche
+          <br class="hidden-xs" />por habitación</p>
         <div class="price-filter">
           <span class="currency">ARS</span>
-          <strong class="price">&nbsp;863</strong>
+          <strong class="price">&nbsp;{{hotel.price}}</strong>
         </div>
         <a href="#">
           <button id="go-to-hotel" name="go-to-hotel" class="btn btn-primary">Ver Hotel</button>

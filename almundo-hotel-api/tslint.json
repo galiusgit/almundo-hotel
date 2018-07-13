@@ -7,7 +7,7 @@
         "no-unused-expression": true
     },
     "rules": {
-        "no-magic-numbers": true,
+        "no-magic-numbers": false,
         "no-duplicate-variable": true,
         "no-unused-variable": true,
 

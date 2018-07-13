@@ -1,12 +1,12 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppHotelApiModule } from './app.hotel.api.module';
 
 declare const module: any;
 
 const SERVER_PORT: number = 3000;
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppHotelApiModule);
   await app.listen(SERVER_PORT);
 
   if (module.hot) {
