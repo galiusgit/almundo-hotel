@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterUtil } from '../util/router.util';
 
+/**
+ * AppHeaderSectionComponent
+ * @export
+ * @class AppHeaderSectionComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-header-section',
   template: `
@@ -33,15 +39,33 @@ import { RouterUtil } from '../util/router.util';
     `],
 })
 export class AppHeaderSectionComponent implements OnInit {
+
+  /**
+   * @type {string}
+   * @memberof AppHeaderSectionComponent
+   */
   public title: string = 'App Header Section Component';
 
-  constructor(private routerUtil: RouterUtil){}
+  /**
+   * Creates an instance of AppHeaderSectionComponent.
+   * @param {RouterUtil} routerUtil
+   * @memberof AppHeaderSectionComponent
+   */
+  constructor(private routerUtil: RouterUtil) { }
 
-  public ngOnInit(): void {
-    // throw new Error("Method not implemented.");
-  }
+  /**
+   * ngOnInit
+   * @memberof AppHeaderSectionComponent
+   */
+  public ngOnInit(): void { }
 
-  public getClassAcitveByRoute(strRoute: string): string{
+  /**
+   *  getClassAcitveByRoute
+   * @param {string} strRoute
+   * @returns {string}
+   * @memberof AppHeaderSectionComponent
+   */
+  public getClassAcitveByRoute(strRoute: string): string {
     return this.routerUtil.isRouteActive(strRoute) ? 'active' : '';
   }
 

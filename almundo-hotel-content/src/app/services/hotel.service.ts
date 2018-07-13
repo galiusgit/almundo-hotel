@@ -1,13 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { HotelModel } from '../../../../common-hotel-dependencies/src/hotel/models/HotelModel';
 import { FilterRequestModel } from '../../../../common-hotel-dependencies/src/hotel/models/FilterRequestModel';
 
+/**
+ * HotelService
+ * @export
+ * @class HotelService
+ */
 @Injectable()
 export class HotelService {
 
+  /**
+   * Creates an instance of HotelService.
+   * @param {Http} http
+   * @memberof HotelService
+   */
   constructor(private http: Http) { }
 
+  /**
+   * getHotelList
+   * @returns
+   * @memberof HotelService
+   */
   public getHotelList() {
     const headersParam = new Headers({
       'Content-type': 'application/json',
@@ -19,6 +33,12 @@ export class HotelService {
       });
   }
 
+  /**
+   * findFilterHotels
+   * @param {FilterRequestModel} filterRequest
+   * @returns
+   * @memberof HotelService
+   */
   public findFilterHotels(filterRequest: FilterRequestModel) {
     const headersParam = new Headers({
       'Content-type': 'application/json',
@@ -31,6 +51,13 @@ export class HotelService {
       });
   }
 
+  /**
+   * objHotelMapper
+   * @private
+   * @param {Array<any>} hotelRowsRequest
+   * @returns
+   * @memberof HotelService
+   */
   private objHotelMapper(hotelRowsRequest: Array<any>) {
     for (const hotelRow of hotelRowsRequest) {
       if (hotelRow.amenities) {

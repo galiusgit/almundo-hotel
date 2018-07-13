@@ -7,9 +7,18 @@ const routeFileDb = path.resolve(__dirname, 'hotel_data.sqlite3');
 const logger: LoggerUtil = new LoggerUtil('SqliteManager', __filename);
 const sqlite3Db = new sqlite3.Database(routeFileDb);
 
+/**
+ * SqliteManager
+ * @export
+ * @class SqliteManager
+ */
 @Component()
 export class SqliteManager {
 
+    /**
+     * Creates an instance of SqliteManager.
+     * @memberof SqliteManager
+     */
     constructor() {
         sqlite3Db.serialize(() => {
             sqlite3Db.get('SELECT 1;',
@@ -23,6 +32,13 @@ export class SqliteManager {
         });
     }
 
+    /**
+     * selectOne
+     * @param {string} sqlStr
+     * @param {(result: any) => any} callSuccess
+     * @param {(error: any) => any} callError
+     * @memberof SqliteManager
+     */
     public selectOne(sqlStr: string, callSuccess: (result: any) => any, callError: (error: any) => any) {
         sqlite3Db.serialize(() => {
             sqlite3Db.get(sqlStr,
@@ -36,6 +52,13 @@ export class SqliteManager {
         });
     }
 
+    /**
+     * select
+     * @param {string} sqlStr
+     * @param {(result: Array<any>) => any} callSuccess
+     * @param {(error: any) => any} callError
+     * @memberof SqliteManager
+     */
     public select(sqlStr: string, callSuccess: (result: Array<any>) => any, callError: (error: any) => any) {
         sqlite3Db.serialize(() => {
             sqlite3Db.all(sqlStr,
@@ -49,6 +72,11 @@ export class SqliteManager {
         });
     }
 
+    /**
+     * getDb
+     * @returns
+     * @memberof SqliteManager
+     */
     public getDb() {
         return sqlite3Db;
     }

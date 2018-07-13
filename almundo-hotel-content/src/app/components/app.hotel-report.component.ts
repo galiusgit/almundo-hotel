@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+/**
+ * AppHotelReportComponent
+ * @export
+ * @class AppHotelReportComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-hotel-report',
   template: `
@@ -9,9 +14,16 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class AppHotelReportComponent implements OnInit {
-
+  /**
+   * Creates an instance of AppHotelReportComponent.
+   * @memberof AppHotelReportComponent
+   */
   constructor() { }
 
+  /**
+   * ngOnInit
+   * @memberof AppHotelReportComponent
+   */
   public ngOnInit() {
   }
 

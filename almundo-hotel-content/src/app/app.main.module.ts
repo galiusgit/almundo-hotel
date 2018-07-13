@@ -18,10 +18,14 @@ import { AppHotelReportComponent } from './components/app.hotel-report.component
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'report', pathMatch: 'full' },
-  { path: 'report', component: AppHotelReportComponent, data: {ejemplo: 'cambio1'} },
+  { path: 'report', component: AppHotelReportComponent },
   { path: 'manager', component: AppHotelManagerComponent },
 ];
-
+/**
+ * AppMainModule
+ * @export
+ * @class AppMainModule
+ */
 @NgModule({
   declarations: [
     AppRootSectionComponent,

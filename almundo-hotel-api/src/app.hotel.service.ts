@@ -8,16 +8,41 @@ import { Response } from 'express';
 const logger: LoggerUtil = new LoggerUtil('HotelService', __filename);
 const hotelListConst: Array<HotelModel> = require('../resource/data.json');
 
+/**
+ * @export
+ * @class HotelService
+ */
 @Component()
 export class HotelService {
+
+    /**
+     * @private
+     * @type {Array<number>}
+     * @memberof HotelService
+     */
     private validStars: Array<number> = [0, 1, 2, 3, 4, 5];
 
+    /**
+     * Creates an instance of HotelService.
+     * @param {SqliteManager} sqliteManager
+     * @memberof HotelService
+     */
     constructor(private sqliteManager: SqliteManager) { }
-
+    
+    /**
+     * getStaticHotelList
+     * @returns {Array<HotelModel>}
+     * @memberof HotelService
+     */
     public getStaticHotelList(): Array<HotelModel> {
         return hotelListConst;
     }
 
+    /**
+     * findAllHotels2
+     * @returns {Promise<Array<HotelModel>>}
+     * @memberof HotelService
+     */
     public findAllHotels2(): Promise<Array<HotelModel>> {
         return new Promise<Array<HotelModel>>((resolve) => {
             this.sqliteManager.select('SELECT * FROM hotel ORDER by creationdate DESC LIMIT 100',
@@ -32,6 +57,12 @@ export class HotelService {
         });
     }
 
+    /**
+     * findAllHotels
+     * @param {Response} res
+     * @returns {Array<HotelModel>}
+     * @memberof HotelService
+     */
     public findAllHotels(res: Response): Array<HotelModel> {
         logger.info('---> init findAllHotels... ');
         this.sqliteManager.getDb().serialize(() => {
@@ -49,6 +80,13 @@ export class HotelService {
         return [];
     }
 
+    /**
+     * findFilterHotels
+     * @param {FilterRequestModel} filterRequest
+     * @param {Response} res
+     * @returns {Array<HotelModel>}
+     * @memberof HotelService
+     */
     public findFilterHotels(filterRequest: FilterRequestModel, res: Response): Array<HotelModel> {
         logger.info('---> init findFilterHotels... ');
         let filters: string = '';
